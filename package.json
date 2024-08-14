@@ -2,7 +2,8 @@
   "name": "regionmarker",
   "displayName": "RegionMarker",
   "description": "Simple extensions for better regions visiblity.",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "MommysGoodPuppy",
   "engines": {
     "vscode": "^1.92.0"
   },
