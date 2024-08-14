@@ -1,0 +1,105 @@
+{
+  "name": "regionmarker",
+  "displayName": "RegionMarker",
+  "description": "Simple extensions for better regions visiblity.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Region Marker",
+      "properties": {
+        "regionMarker.fontWeight": {
+          "order": 1,
+          "type": "string",
+          "enum": [
+            "normal",
+            "bold"
+          ],
+          "default": "bold",
+          "description": "Font weight for region markers."
+        },
+        "regionMarker.useWholeLineForBackground": {
+          "order": 2,
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to apply background color to the whole line."
+        },
+        "regionMarker.colorCustomization": {
+          "order": 3,
+          "type": "string",
+          "enum": ["please edit in workbench.colorCustomizations"],
+          "enumDescriptions": ["Open settings.json to customize colors"],
+          "default": "please edit in workbench.colorCustomizations",
+          "description": "Color customization for region markers.",
+          "markdownDescription": "[Configure color customization](command:workbench.action.openSettings?%5B%22workbench.colorCustomizations%22%5D)"
+        }
+      }
+    },
+    "colors": [
+      {
+        "id": "regionMarker.region.backgroundColor",
+        "description": "Background color for #region markers",
+        "defaults": {
+          "dark": "#ae00ff58",
+          "light": "#ae00ff2d",
+          "highContrast": "#ae00ff98"
+        }
+      },
+      {
+        "id": "regionMarker.region.foregroundColor",
+        "description": "Foreground color for #region markers",
+        "defaults": {
+          "dark": "#ffffff70",
+          "light": "#00000070",
+          "highContrast": "#ffffff70"
+        }
+      },
+      {
+        "id": "regionMarker.endregion.backgroundColor",
+        "description": "Background color for #endregion markers",
+        "defaults": {
+          "dark": "#4e40492c",
+          "light": "#4e40492c",
+          "highContrast": "#4e40492c"
+        }
+      },
+      {
+        "id": "regionMarker.endregion.foregroundColor",
+        "description": "Foreground color for #endregion markers",
+        "defaults": {
+          "dark": "#ffffff70",
+          "light": "#00000070",
+          "highContrast": "#ffffff70"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.92.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
