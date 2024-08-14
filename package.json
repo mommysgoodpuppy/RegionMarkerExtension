@@ -4,6 +4,7 @@
   "description": "Simple extensions for better regions visiblity.",
   "version": "1.0.0",
   "publisher": "MommysGoodPuppy",
+  "repository": {"url": "https://github.com/mommysgoodpuppy/RegionMarkerExtension"},
   "engines": {
     "vscode": "^1.92.0"
   },
